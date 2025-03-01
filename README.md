@@ -1,4 +1,4 @@
-The architecture consists of:
+##The architecture consists of:
 
 Web Tier: Public-facing Application Load Balancer routes traffic to Nginx web servers hosting a React.js website.
 
