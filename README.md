@@ -4,7 +4,7 @@
 This workshop is a hands-on walk through of a three-tier web architecture in AWS. We will be manually creating the necessary network, security, app, and database components and configurations in order to run this architecture in an available and scalable manner.
 
 ## Architecture Overview
-![AWS Architecture - DrawIO](https://github.com/pandacloud1/AWS_Project1/assets/134182273/3e46931f-0802-48a7-b044-22cd2afde467)
+![AWS Architecture - DrawIO]
 
 In this architecture, a public-facing Application Load Balancer forwards client traffic to our web tier EC2 instances. The web tier is running Nginx webservers that are configured to serve a React.js website and redirects our API calls to the application tier’s internal facing load balancer. The internal facing load balancer then forwards that traffic to the application tier, which is written in Node.js. The application tier manipulates data in an Aurora MySQL multi-AZ database and returns it to our web tier. Load balancing, health checks and autoscaling groups are created at each layer to maintain the availability of this architecture.
 
@@ -42,7 +42,7 @@ In this architecture, a public-facing Application Load Balancer forwards client 
 - Place them in DB subnet group created above.
 
 ## Step 7: Create Test App Server, Install Packages, Test Connections
-- [Test App-Server Commands](https://github.com/pandacloud1/AWS_Project1/blob/main/app-server-commands)
+- [Test App-Server Commands](https://github.com/sanjeev-saravanan/Scalable-Secure-App-Deployment-on-AWS/blob/main/app-server-commands)
 - Create AMI.
 - Create launch template using AMI.
 - Create target group.
@@ -51,7 +51,7 @@ In this architecture, a public-facing Application Load Balancer forwards client 
 - Edit `nginx.conf` file in local system by adding Internal-LB-DNS & upload the file in S3.
 
 ## Step 8: Create Test Web Server, Install Packages (Nginx, Node.js (React)), Test Connections
-- [Test Web-Server Commands](https://github.com/pandacloud1/AWS_Project1/blob/main/web-server-commands)
+- [Test Web-Server Commands](https://github.com/sanjeev-saravanan/Scalable-Secure-App-Deployment-on-AWS/blob/main/web-server-commands)
 - Create AMI.
 - Create launch template using AMI.
 - Create target group.
@@ -59,11 +59,12 @@ In this architecture, a public-facing Application Load Balancer forwards client 
 - Create autoscaling group.
 
 ## Step 9: Add External-ALB-DNS Record in Route 53
-
+- Add a DNS record in Route 53 pointing to the External Load Balancer DNS.
 ## Step 10: Create CloudWatch Alarms Along with SNS
-
+- Create CloudWatch alarms for key metrics (e.g., CPU utilization, latency).
+- Configure SNS topics for notifications
 ## Step 11: Create CloudTrail
-
+- Enable AWS CloudTrail to log API activity for auditing and troubleshooting.
 ## Step 12: Deleting the Entire Infrastructure
 - Delete CloudFront.
 - Delete CloudWatch alarms.
